@@ -50,7 +50,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         }
 
         //Frequency
-        public void outputLetterFrequencyToConsole(List<int> frequency)
+        public void outputLetterFrequency(List<int> frequency)
         {
             Console.WriteLine("frequency of letters: ");
             Console.WriteLine(letterFrequencyToReport(frequency));

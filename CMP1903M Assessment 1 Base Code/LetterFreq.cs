@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_Assessment_1_Base_Code
 {
-    class LetterFreq
+    public class LetterFreq
     {
-        public List<int> letterFrequency(Input input)
+        public List<int> letterFrequency(string text)
         {
             var letter_count = new List<int>(new int[26]);
             var a_value = (int)'a';
 
-            foreach (var ch in input.text.ToCharArray())
+            foreach (char ch in text)
             {
-                if(char.IsWhiteSpace(ch) || !char.IsLetter(ch))
+                if (char.IsWhiteSpace(ch) || !char.IsLetter(ch))
                 {
-                  continue;
+                    continue;
                 }
 
                 var ch_clean = char.ToLower(ch);
@@ -37,6 +37,8 @@ namespace CMP1903M_Assessment_1_Base_Code
             {
                 values.Add(0);
             }
+            return values;
         }
+    }
 }
        

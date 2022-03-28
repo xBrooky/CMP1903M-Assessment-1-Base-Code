@@ -26,13 +26,13 @@ namespace CMP1903M_Assessment_1_Base_Code
             //Create an 'Analyse' object
             //Pass the text input to the 'analyseText' method
 
-            Analyse a = new Analyse();
-            Input p = new Input();
+            Analyse newAnalyse = new Analyse();
+            Input inputText = new Input();
 
             // User Input
             Console.WriteLine("Do you want to enter the text via the keyboard? If so enter '1'. ");
             Console.WriteLine("Do you want to read in text from a file? If so enter '2'. ");
-
+            
             // Option 1 or Option 2 Loop
             bool inputValid = true;
             do
@@ -43,8 +43,8 @@ namespace CMP1903M_Assessment_1_Base_Code
                     if (inputChoice == 1)
                     {
                         inputValid = false;
-                        input = p.manualTextInput();
-                        values = a.analyseText(input);
+                        input = inputText.manualTextInput();
+                        values = inputText.analyseText(input);
                         break;
                     }
                     else
@@ -78,7 +78,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             var analyse = new LetterFreq();
 
             //Results
-            var anaysis = analyse.analyseText(input);
+            var analysis = analyse.analyseText(input);
 
             var report = new Report();
             Console.WriteLine();
@@ -92,7 +92,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             Console.WriteLine();
             Console.WriteLine();
             //Print
-            report.outputLetterFrequencyToConsole(frequency);
+            report.outputLetterFrequency(frequency);
         }
     }
 }
