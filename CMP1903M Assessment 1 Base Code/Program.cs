@@ -29,9 +29,9 @@ namespace CMP1903M_Assessment_1_Base_Code
             Analyse newAnalyse = new Analyse();
             Input inputText = new Input();
 
-            // User Input
-            Console.WriteLine("Do you want to enter the text via the keyboard? If so enter '1'. ");
-            Console.WriteLine("Do you want to read in text from a file? If so enter '2'. ");
+            int inputChoice = inputText.handleInput();
+            
+
             
             // Option 1 or Option 2 Loop
             bool inputValid = true;
@@ -39,12 +39,11 @@ namespace CMP1903M_Assessment_1_Base_Code
             {
                 try
                 {
-                    int inputChoice = Convert.ToInt32(Console.ReadLine());
                     if (inputChoice == 1)
                     {
                         inputValid = false;
                         input = inputText.manualTextInput();
-                        values = inputText.analyseText(input);
+                        values = newAnalyse.analyseText(input);
                         break;
                     }
                     else

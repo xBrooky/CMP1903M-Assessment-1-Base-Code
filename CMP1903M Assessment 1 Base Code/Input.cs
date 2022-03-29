@@ -41,24 +41,32 @@ namespace CMP1903M_Assessment_1_Base_Code
        //   return text;
        //
 
-        public void manualTextInput()
+        public string manualTextInput()
         {
+            Console.WriteLine("Enter String: ");
+
             _text = Console.ReadLine();
-            if (text == null)
+            if (_text == null)
             {
-                _text = "";
+                Console.WriteLine("Input can't be an empty string: ");
+                return manualTextInput();
             }
+
+            return _text;
         }
 
-        public void handleInput()
+        public int handleInput()
         {
-            switch (_inputMode)
-            {
-                case InputMode.Manual:
-                    Console.WriteLine("Please Enter Text: ");
-                    manualTextInput();
-                    break;  
-            }
+
+            // User Input
+            Console.WriteLine("Do you want to enter the text via the keyboard? If so enter '1'. ");
+            Console.WriteLine("Do you want to read in text from a file? If so enter '2'. ");
+
+            string input = Console.ReadLine();
+            int option = Convert.ToInt32(input);
+            return option;
+
+           
         }
         //Method: fileTextInput
         //Arguments: string (the file path)
@@ -69,15 +77,16 @@ namespace CMP1903M_Assessment_1_Base_Code
         {
             try
             {
-                string text = File.ReadAllText("WriteText.txt");
+                Console.WriteLine("Please enter file path: ");
+                string path = Console.ReadLine();
+                string text = File.ReadAllText(path);
                 return text;
 
             }
             catch
             {
                 Console.WriteLine("File not found, Error");
-                Environment.Exit(0);
-                return null;
+                return fileTextInput();
             }
         }
     }
