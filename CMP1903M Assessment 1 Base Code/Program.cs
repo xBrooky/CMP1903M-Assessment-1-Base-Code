@@ -30,9 +30,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             Input inputText = new Input();
 
             int inputChoice = inputText.handleInput();
-            
 
-            
             // Option 1 or Option 2 Loop
             bool inputValid = true;
             do
@@ -45,6 +43,16 @@ namespace CMP1903M_Assessment_1_Base_Code
                         input = inputText.manualTextInput();
                         values = newAnalyse.analyseText(input);
                         break;
+                    }
+                    else if (inputChoice == 2)
+                    {
+                        inputValid = false;
+                        Console.WriteLine("Please Enter Path: ");
+                        string fileLocation = Console.ReadLine();
+                        input = inputText.fileTextInput(fileLocation);
+                        values = newAnalyse.analyseText(input);
+                        break;
+
                     }
                     else
                     {
@@ -71,7 +79,6 @@ namespace CMP1903M_Assessment_1_Base_Code
             Console.WriteLine("Number of Sentences: " + sentenceCount);
             Console.WriteLine("Number of Consonant: " + consonantCount);
             Console.WriteLine("Number of Vowels: " + vowelCount);
-            Console.WriteLine("Frequency of Indiviual Letters: ");
 
             // Analyse
             var analyse = new LetterFreq();

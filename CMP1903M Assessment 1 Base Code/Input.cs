@@ -8,39 +8,7 @@ namespace CMP1903M_Assessment_1_Base_Code
 {
     public class Input
     {
-        public enum InputMode
-        {
-            Manual,
-            TextFile,
-        }
-
-        string _text;
-        public string text { get { return _text; } }
-
-        InputMode _inputMode;
-        InputMode inputMode { get { return _inputMode; } }
-
-        public Input()
-        {
-            _inputMode = InputMode.Manual;
-            _text = "";
-        }
-
-        //Handles the text input for Assessment 1
-        //string text = "nothing";
-        
-        //Method: manualTextInput
-        //Arguments: none
-        //Returns: string
-        //Gets text input from the keyboard
-
-       //Public string manualTextInput()
-       //
-       //   Console.WriteLine("Please Enter Text: ");
-       //   string text = Console.ReadLine();
-       //   return text;
-       //
-
+        string _text = "nothing";
         public string manualTextInput()
         {
             Console.WriteLine("Enter String: ");
@@ -73,21 +41,12 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Returns: string
         //Gets text input from a .txt file
         // Program terminates if Error
-        public string fileTextInput()
+        public string fileTextInput(string fileLocation)
         {
-            try
-            {
-                Console.WriteLine("Please enter file path: ");
-                string path = Console.ReadLine();
-                string text = File.ReadAllText(path);
-                return text;
 
-            }
-            catch
-            {
-                Console.WriteLine("File not found, Error");
-                return fileTextInput();
-            }
+            string text = File.ReadAllText(fileLocation);
+            return text;
         }
+
     }
 }

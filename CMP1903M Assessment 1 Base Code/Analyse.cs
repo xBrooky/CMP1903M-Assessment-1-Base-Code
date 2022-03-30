@@ -24,8 +24,6 @@ namespace CMP1903M_Assessment_1_Base_Code
                 values.Add(0);
             }
 
-            
-
             //Blank File
             string empty = ("Empty.txt");
             File.WriteAllText(empty, string.Empty);
@@ -63,12 +61,12 @@ namespace CMP1903M_Assessment_1_Base_Code
             for (int i = 0; i < lowerCaseInput.Length; i++)
             {
                 //Checks for Vowels
-                if (lowerCaseInput[i] == 'a' || lowerCaseInput[i] == 'e' || lowerCaseInput[i] == 'i' || lowerCaseInput[i] == 'o' || lowerCaseInput[i] == 'u' || lowerCaseInput[i] == 'A' || lowerCaseInput[i] == 'E' || lowerCaseInput[i] == 'I' || lowerCaseInput[i] == 'O' || lowerCaseInput[i] == 'U')
+                if (lowerCaseInput[i] == 'a' || lowerCaseInput[i] == 'e' || lowerCaseInput[i] == 'i' || lowerCaseInput[i] == 'o' || lowerCaseInput[i] == 'u')
                 {
                     values[1]++;
                 }
                 //Checks for !Vowels - therefore Consonants
-                if (lowerCaseInput[i] != 'a' || lowerCaseInput[i] != 'e' || lowerCaseInput[i] != 'i' || lowerCaseInput[i] != 'o' || lowerCaseInput[i] != 'u' || lowerCaseInput[i] != 'A' || lowerCaseInput[i] != 'E' || lowerCaseInput[i] != 'I' || lowerCaseInput[i] != 'O' || lowerCaseInput[i] != 'U')
+                else if (lowerCaseInput[i] != 'a' || lowerCaseInput[i] != 'e' || lowerCaseInput[i] != 'i' || lowerCaseInput[i] != 'o' || lowerCaseInput[i] != 'u')
                 {
                     values[2]++;
                 }
@@ -81,8 +79,6 @@ namespace CMP1903M_Assessment_1_Base_Code
                 if (char.IsLower(input[i])) values[3]++;
                 if (char.IsUpper(input[i])) values[4]++;
             }
-
-
 
             //Split Section
             string[] wordList = input.Split(new Char[] { '.', ',', ' ', '!', '\n', '\t' });

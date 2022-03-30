@@ -52,8 +52,9 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Frequency
         public void outputLetterFrequency(List<int> frequency)
         {
-            Console.WriteLine("frequency of letters: ");
+            Console.WriteLine("Frequency of Indiviual Letters: ");
             Console.WriteLine(letterFrequencyToReport(frequency));
+            
         }
 
         //Convert frequency list to readable
@@ -71,6 +72,5 @@ namespace CMP1903M_Assessment_1_Base_Code
             }
             return string.Join(", ", frequency_string);
         }
-
     }
 }
